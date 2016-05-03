@@ -1,11 +1,3 @@
-// Package anvil_test provides unit tests for the Anvil API.
-//
-// Commands to remember
-//
-// curl -X POST http://10.0.1.26:3000/signin -d 'max_age=315569260&response_type=code&client_id=6b6efaae-0ab8-4152-8f92-a87c17921800&redirect_uri=https://anvil.coralproject.net&scope=openid%20profile%20email%20realm&provider=password&email=bill@thekennedyclan.net&password=Qfe^bJ9uD6cgnD-8' -H "referrer: https://anvil.coralproject.net/signin"
-// Redirecting to https://anvil.coralproject.net?code=c9ce6c03ea6ad8dd3f0a%
-// curl -X POST http://6b6efaae-0ab8-4152-8f92-a87c17921800:6dafd2b59d6954849a6c@10.0.1.26:3000/token -d 'grant_type=authorization_code&client_id=6b6efaae-0ab8-4152-8f92-a87c17921800&code=a90673f4290562282150&redirect_uri=https://anvil.coralproject.net' -H "referrer: https://anvil.coralproject.net/token"
-//
 package anvil_test
 
 import (

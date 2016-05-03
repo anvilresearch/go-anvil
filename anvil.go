@@ -1,5 +1,3 @@
-// Package anvil provides support for validating an Anvil JWT and extracting
-// the claims for authorization.
 package anvil
 
 import (
