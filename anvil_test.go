@@ -15,7 +15,7 @@ const succeed = "\u2713"
 const failed = "\u2717"
 
 // Response for Anvil.io when requesting keys.
-// curl http://10.0.1.26:3000/jwks
+// curl http://HOST/jwks
 var jwks = `{
    "keys":[
       {
