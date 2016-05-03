@@ -16,17 +16,17 @@ SignIn
 	You will need these values to call the signin API:
 	HOST         = 10.0.1.26:3000
 	CLIENTID     = 6b6efaae-0ab8-4152-8f92-a87c17921800
-	REDIRECT_URL = <a href="https://anvil.coralproject.net">https://anvil.coralproject.net</a>
+	REDIRECT_URL = https://anvil.coralproject.net
 	EMAIL        = bill@thekennedyclan.net
 	PASSWORD     = Qfe^bJ9uD6cgnD-8
-	REFERRER     = <a href="https://anvil.coralproject.net/signin">https://anvil.coralproject.net/signin</a>
+	REFERRER     = https://anvil.coralproject.net/signin
 	
-	curl -X POST <a href="https://HOST/signin">https://HOST/signin</a> -d 'max_age=315569260&response_type=code&client_id=CLIENTID&redirect_uri=REDIRECT_URL&scope=openid%20profile%20email%20realm&provider=password&email=EMAIL&password=PASSWORD -H "referrer: REFERRER"
+	curl -X POST https://HOST/signin -d 'max_age=315569260&response_type=code&client_id=CLIENTID&redirect_uri=REDIRECT_URL&scope=openid%20profile%20email%20realm&provider=password&email=EMAIL&password=PASSWORD -H "referrer: REFERRER"
 
 Response
 
 
-	Redirecting to <a href="https://anvil.coralproject.net?code=c9ce6c03ea6ad8dd3f0a%">https://anvil.coralproject.net?code=c9ce6c03ea6ad8dd3f0a%</a>
+	Redirecting to https://anvil.coralproject.net?code=c9ce6c03ea6ad8dd3f0a%
 
 Token
 
@@ -34,11 +34,11 @@ Token
 	You will need these values to call the token API:
 	HOST         = 10.0.1.26:3000
 	CLIENTID     = 6b6efaae-0ab8-4152-8f92-a87c17921800
-	REDIRECT_URL = <a href="https://anvil.coralproject.net">https://anvil.coralproject.net</a>
-	REFERRER     = <a href="https://anvil.coralproject.net/signin">https://anvil.coralproject.net/signin</a>
+	REDIRECT_URL = https://anvil.coralproject.net
+	REFERRER     = https://anvil.coralproject.net/signin
 	CODE         = 6dafd2b59d6954849a6c  // From the response of the signin call
 	
-	curl -X POST <a href="https://CLIENTID:CODE@HOST/token">https://CLIENTID:CODE@HOST/token</a> -d 'grant_type=authorization_code&client_id=CLIENTID&code=CODE&redirect_uri=REDIRECT_URL' -H "referrer: REFERRER"
+	curl -X POST https://CLIENTID:CODE@HOST/token -d 'grant_type=authorization_code&client_id=CLIENTID&code=CODE&redirect_uri=REDIRECT_URL' -H "referrer: REFERRER"
 
 
 
