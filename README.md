@@ -37,8 +37,8 @@ Token
 	REDIRECT_URL = <a href="https://anvil.coralproject.net">https://anvil.coralproject.net</a>
 	REFERRER     = <a href="https://anvil.coralproject.net/signin">https://anvil.coralproject.net/signin</a>
 	CODE         = 6dafd2b59d6954849a6c  // From the response of the signin call
-
-curl -X POST <a href="https://CLIENTID:CODE@HOST/token">https://CLIENTID:CODE@HOST/token</a> -d 'grant_type=authorization_code&client_id=CLIENTID&code=CODE&redirect_uri=REDIRECT_URL' -H "referrer: REFERRER"
+	
+	curl -X POST <a href="https://CLIENTID:CODE@HOST/token">https://CLIENTID:CODE@HOST/token</a> -d 'grant_type=authorization_code&client_id=CLIENTID&code=CODE&redirect_uri=REDIRECT_URL' -H "referrer: REFERRER"
 
 
 
