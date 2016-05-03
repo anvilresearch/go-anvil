@@ -1,6 +1,8 @@
 // Package anvil provides support for validating an Anvil JWT and extracting
 // the claims for authorization.
 //
+// [godoc](https://godoc.org/github.com/anvilresearch/go-anvil)
+//
 // An application needs to call the `/signin` and then the `/token` API calls.
 // These calls authenticate the user for the application and provide the token
 // required to make future calls into any webservice you are building that
