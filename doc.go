@@ -32,4 +32,35 @@
 //
 // 		curl -X POST https://CLIENTID:CODE@HOST/token -d 'grant_type=authorization_code&client_id=CLIENTID&code=CODE&redirect_uri=REDIRECT_URL' -H "referrer: REFERRER"
 //
+// Example
+// 		// Create an Anvil value for the host we are using. Do this during
+// 		// initialization.
+// 		a, err := anvil.New("https://HOST")
+// 		if err != nil {
+// 		    // Log error and probably shutdown the service.
+// 		    return
+// 		}
+//
+// 		// This is an example handler that shows you how to use the Anvil value.
+// 		handler := func(rw http.ResponseWriter, r *http.Request) {
+//
+// 		    // Have access to the Anvil value and use it to validate
+// 		    // the request.
+// 		    claims, err := a.ValidateFromRequest(r)
+// 		    if err != nil {
+//
+// 		        // The token is not value so return an error.
+// 		        rw.Header().Set("Content-Type", "application/json")
+// 		        rw.WriteHeader(http.StatusUnauthorized)
+// 		        json.NewEncoder(rw).Encode(struct{ Error string }{err.Error()})
+// 		        return
+// 		    }
+//
+// 		    // Everything is validated so move forward. The claims has what is
+// 		    // need for authorization using the Scope field.
+// 		    log.Println(claims.Scope)
+// 		}
+//
+// 		// Need this to get the code to compile. Ignore this.
+// 		handler(nil, nil)
 package anvil

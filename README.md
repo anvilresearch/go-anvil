@@ -5,7 +5,7 @@
 Package anvil provides support for validating an Anvil JWT and extracting
 the claims for authorization.
 
-[godoc](https://godoc.org/github.com/anvilresearch/go-anvil)
+[godoc](<a href="https://godoc.org/github.com/anvilresearch/go-anvil">https://godoc.org/github.com/anvilresearch/go-anvil</a>)
 
 An application needs to call the `/signin` and then the `/token` API calls.
 These calls authenticate the user for the application and provide the token
@@ -41,6 +41,40 @@ Token
 	CODE         = 6dafd2b59d6954849a6c  // From the response of the signin call
 	
 	curl -X POST <a href="https://CLIENTID:CODE@HOST/token">https://CLIENTID:CODE@HOST/token</a> -d 'grant_type=authorization_code&client_id=CLIENTID&code=CODE&redirect_uri=REDIRECT_URL' -H "referrer: REFERRER"
+
+Example
+
+
+	// Create an Anvil value for the host we are using. Do this during
+	// initialization.
+	a, err := anvil.New("<a href="https://HOST">https://HOST</a>")
+	if err != nil {
+	    // Log error and probably shutdown the service.
+	    return
+	}
+	
+	// This is an example handler that shows you how to use the Anvil value.
+	handler := func(rw http.ResponseWriter, r *http.Request) {
+	
+	    // Have access to the Anvil value and use it to validate
+	    // the request.
+	    claims, err := a.ValidateFromRequest(r)
+	    if err != nil {
+	
+	        // The token is not value so return an error.
+	        rw.Header().Set("Content-Type", "application/json")
+	        rw.WriteHeader(http.StatusUnauthorized)
+	        json.NewEncoder(rw).Encode(struct{ Error string }{err.Error()})
+	        return
+	    }
+	
+	    // Everything is validated so move forward. The claims has what is
+	    // need for authorization using the Scope field.
+	    log.Println(claims.Scope)
+	}
+	
+	// Need this to get the code to compile. Ignore this.
+	handler(nil, nil)
 
 
 
