@@ -21,7 +21,7 @@ SignIn
 	REDIRECT_URL = https://anvil.coralproject.net
 	EMAIL        = bill@thekennedyclan.net
 	PASSWORD     = Qfe^bJ9uD6cgnD-8
-	REFERRER     = <a href="https://anvil.coralproject.net/signin">https://anvil.coralproject.net/signin</a>
+	REFERRER     = https://anvil.coralproject.net/signin
 	
 	curl -X POST https://HOST/signin -d 'max_age=315569260&response_type=code&client_id=CLIENTID&redirect_uri=REDIRECT_URL&scope=openid%20profile%20email%20realm&provider=password&email=EMAIL&password=PASSWORD -H "referrer: REFERRER"
 
