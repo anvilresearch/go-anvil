@@ -60,7 +60,4 @@
 // 		    // need for authorization using the Scope field.
 // 		    log.Println(claims.Scope)
 // 		}
-//
-// 		// Need this to get the code to compile. Ignore this.
-// 		handler(nil, nil)
 package anvil
