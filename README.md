@@ -100,7 +100,7 @@ claims for authorization.
 ``` go
 func New(host string) (*Anvil, error)
 ```
-New create a new Anvil value for use with handling JWTs from Anvil.io
+New create a new Anvil value for use with handling JWTs from Anvil.io.
 
 
 

@@ -47,7 +47,7 @@ type Anvil struct {
 	PublicKey *rsa.PublicKey
 }
 
-// New create a new Anvil value for use with handling JWTs from Anvil.io
+// New create a new Anvil value for use with handling JWTs from Anvil.io.
 func New(host string) (*Anvil, error) {
 
 	// Ask Anvil.io for the public keys.
